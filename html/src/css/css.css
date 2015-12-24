@@ -1,0 +1,396 @@
+.text-bai {
+  color: #faffff;
+}
+/*左固定  右自动*/
+.alert {
+  padding: 5px 10px;
+  border-radius: 8px;
+  max-width: 600px;
+  position: fixed;
+  top: 0px;
+  box-shadow: none;
+  display: none;
+  z-index: 999;
+}
+.tooltip {
+  white-space: nowrap;
+}
+.tooltip-inner {
+  padding: 5px 10px;
+}
+.user-image-34 {
+  width: 34px;
+  height: 34px;
+}
+.user-image-54 {
+  width: 54px;
+  height: 54px;
+}
+.user-image-250 {
+  width: 250px;
+  height: 250px;
+}
+body {
+  background: #EEEEEE;
+}
+.add-mail-btn-lg {
+  width: 240px;
+}
+.panel {
+  border-radius: 8px;
+}
+.panel .panel-footer {
+  background-color: #fff;
+  border-top: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+}
+.panel .panel-body {
+  padding: 15px 30px;
+}
+.panel .panel-heading {
+  border-color: #fff;
+  padding: 20px 30px;
+  border: none;
+}
+.panel-shezhi {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+}
+.panel-shezhi .panel-footer {
+  padding-top: 0;
+}
+.panel-shezhi .panel-body {
+  padding: 10px 30px;
+}
+.panel-shezhi .panel-heading {
+  padding-bottom: 0;
+}
+.panel-mail-baody {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+}
+.panel-mail-baody .mail-head {
+  padding-top: 20px;
+  font-size: 30px;
+}
+.panel-mail-baody .mail-footer {
+  padding: 20px 0;
+}
+.panel-mail-baody .mail-footer .mail-user-name {
+  font-size: 22px;
+}
+.panel-mail-baody .mail-body {
+  font-size: 16px;
+}
+.panel-add-mail .user-image {
+  width: 65px;
+  height: 65px;
+}
+.panel-add-mail .padding-top-10 {
+  padding-top: 10px;
+}
+.panel-faxin {
+  background-color: #faffff;
+}
+.panel-faxin .panel-footer {
+  background-color: #faffff;
+}
+/*
+page 开头的都是 页面整体css
+*/
+.page-index {
+  background-image: url(../image/1.png);
+  background-repeat: no-repeat;
+  background-position: top center ;
+  min-width: 1300px;
+}
+.page-index .index-daohang {
+  text-align: right;
+  padding: 10px;
+}
+.page-index .index-daohang a {
+  color: #fff;
+}
+.page-index .app-name {
+  color: #Fff;
+  text-align: center;
+}
+.page-index .index {
+  padding-top: 40px;
+  width: 700px;
+}
+.page-index .index .mail-fenye {
+  padding-top: 40px;
+}
+.page-openMail {
+  padding-top: 70px;
+  width: 700px;
+}
+.page-openMail .mail-fenye {
+  padding-top: 40px;
+}
+.page-shezhi {
+  overflow: auto;
+}
+.page-shezhi .page-shezhi-body {
+  padding-top: 70px;
+  width: 700px;
+}
+.page-shezhi .page-shezhi-body .user-img {
+  padding-bottom: 50px;
+}
+.page-shezhi .page-shezhi-body .user-img img {
+  width: 250px;
+  height: 250px;
+  border: 5px solid #ffffff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+}
+.page-shezhi .page-shezhi-body .user-img img:hover {
+  -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.28);
+}
+.page-shezhi .page-shezhi-body .user-img .user-img-file {
+  width: 60px;
+}
+.page-userIndex .user-index-zuo {
+  float: left;
+  width: 46px;
+  margin-right: -46px;
+  position: relative;
+}
+.page-userIndex .user-index-you {
+  float: right;
+  width: 100%;
+}
+.page-userIndex .user-index-you-neirong {
+  margin-left: 46px;
+}
+.page-userIndex .user-index-zuo-neirong {
+  background-color: #172026;
+  color: #B3B3B3;
+  border-right: 1px solid #131B21;
+  position: relative;
+}
+.page-userIndex .user-index-zuo-neirong .logo {
+  display: block;
+  width: 46px;
+  height: 46px;
+  background-color: #cd6a67;
+  color: #ffffff;
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 43px;
+  text-align: center;
+}
+.page-userIndex .user-index-zuo-neirong .logo:hover {
+  background-color: #cd6049;
+}
+.page-userIndex .user-index-zuo-neirong .user-image {
+  width: 40px;
+  height: 40px;
+}
+.page-userIndex .user-index-zuo-neirong .user-list {
+  padding-top: 20px;
+}
+.page-userIndex .user-index-zuo-neirong .user-list .user-padding {
+  position: relative;
+  padding: 6px 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.page-userIndex .user-index-zuo-neirong .user-list .user-padding .yuandian {
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: #FE5C62;
+  border: 1px solid #172026;
+  position: absolute;
+  top: 13px;
+  right: 3px;
+}
+.page-userIndex .user-index-zuo-neirong .user-btn-grop {
+  position: absolute;
+  top: 50px;
+  padding-top: 5px;
+}
+.page-userIndex .user-index-zuo-neirong .user-btn-grop .user-btn {
+  display: block;
+  width: 36px;
+  height: 36px;
+  background-color: #172026;
+  color: #00A99D;
+  font-size: 20px;
+  border-radius: 50px;
+}
+.page-userIndex .user-index-zuo-neirong .user-btn-grop .user-btn:hover {
+  border-radius: 50px;
+  background-color: #cd6a67;
+  color: #ffffff;
+}
+.page-userIndex .user-index-zuo-neirong .user-btn-caozuo {
+  position: absolute;
+  bottom: 10px;
+  padding-top: 5px;
+}
+.page-userIndex .user-index-zuo-neirong .user-btn-caozuo .user-btn {
+  width: 36px;
+  height: 36px;
+  background-color: #172026;
+  color: #9f9f9f;
+  font-size: 18px;
+}
+.page-userIndex .user-index-zuo-neirong .user-btn-caozuo .user-btn:hover {
+  border-radius: 50px;
+  color: #ffffff;
+}
+.page-userIndex .user-index-you-neirong {
+  overflow: hidden;
+  position: relative;
+}
+.page-userIndex .user-index-you-neirong .zuo,
+.page-userIndex .user-index-you-neirong .you {
+  top: 0;
+  position: absolute;
+}
+.page-userIndex .user-index-you-neirong .zuo {
+  right: 0;
+  overflow: auto;
+  left: 0;
+  z-index: 1;
+}
+.page-userIndex .user-index-you-neirong .you {
+  overflow: hidden;
+  display: none;
+  right: 0;
+  z-index: 2;
+  background-color: #fff;
+}
+.page-add-mail {
+  position: relative;
+}
+.page-add-mail .add-mail-header {
+  padding: 10px;
+}
+.page-add-mail .add-mail-text {
+  border: none;
+}
+.page-add-mail .add-mail-btn-grop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.page-add-mail .add-mail-btn-grop .btn {
+  border-radius: 0;
+}
+.page-add-mail .add-mail-tishi {
+  width: 100px;
+}
+.page-user-mailList {
+  position: relative;
+  width: 700px;
+}
+.page-user-mailList .top-padding {
+  height: 70px;
+}
+.page-user-mailList .header {
+  position: fixed;
+  top: 0;
+  width: 700px;
+  background-color: #31454F;
+  border-radius: 0 0px 10px 10px;
+  padding: 10px 30px;
+  z-index: 1;
+}
+.page-user-mailList .header li {
+  display: inline-block;
+  padding: 6px 12px;
+  font-weight: normal;
+  line-height: 1.42857143;
+}
+.page-user-mailList .header .shu {
+  color: #00a99d;
+}
+.page-user-mailList .mail-image {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+.page-user-mailList .mail-image .mail-image-box .mail-img {
+  -webkit-box-shadow: 0 1px 1px rgba(36, 18, 0, 0.76);
+  box-shadow: 0 1px 1px rgba(36, 18, 0, 0.76);
+  border-radius: 8px;
+}
+.page-user-mailList .mail-image .time {
+  color: #693200;
+  position: absolute;
+}
+.page-user-mailList .mail-image .mail-image-1 .time {
+  color: #693200;
+  top: 120px;
+  left: 270px;
+}
+.page-user-mailList .mail-image .mail-image-2 {
+  display: none;
+}
+.page-user-mailList .mail-image .mail-image-2 .time {
+  color: #693200;
+  top: 30px;
+  right: 45px;
+}
+.page-add-mailAll {
+  background-color: #fff;
+  position: relative;
+  width: 700px;
+}
+.page-haoyou-list {
+  position: relative;
+  width: 700px;
+}
+.page-haoyou-list .top-padding {
+  height: 70px;
+}
+.page-haoyou-list .header {
+  position: fixed;
+  top: 0;
+  width: 700px;
+  border-radius: 0 0px 10px 10px;
+  padding: 10px 30px;
+  z-index: 1;
+}
+.page-haoyou-list .header li {
+  display: inline-block;
+  padding: 6px 12px;
+  font-weight: normal;
+  line-height: 1.42857143;
+}
+.page-haoyou-list .header .shu {
+  color: #00a99d;
+}
+.page-haoyou-list .panel-add-mail {
+  margin-bottom: 10px;
+}
+.add-mail-xuanze .pangyou-list {
+  padding-bottom: 10px;
+}
+.add-mail-xuanze .pangyou-list .list-image {
+  width: 54px;
+  height: 54px;
+  border: 1px solid #b0b0b0;
+  cursor: pointer;
+}
+.add-mail-xuanze .pangyou-list .list-name {
+  margin-top: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .page-openMail {
+    width: 400px;
+  }
+}
+.xiaokuai {
+  width: 600px;
+  margin: 10% auto;
+}

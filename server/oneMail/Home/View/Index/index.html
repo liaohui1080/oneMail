@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    body{
+        background-color: #25478b;
+        font-size: 13px;
+    }
+    .kuai {
+        border: 1px solid #25478b;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #fff;
+    }
+
+    .title {
+        border-bottom: 1px solid #346d9e;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    .bixv{
+        color:red;
+    }
+</style>
+<body>
+<h3>api测试</h3>
+
+<div class="kuai">
+    <div class="title">基本信息</div>
+    <div>
+        用户id={$Think.session.userID}
+        用户名字={$userName}
+        红色字段代表是必须的
+    </div>
+
+</div>
+
+
+<div class="kuai">
+    <div class="title">获取所有用户</div>
+    <a href="/server/home/index/userAll">
+        /server/home/index/userAll</a>
+</div>
+
+</div>
+
+<div class="kuai">
+    <div class="title">修改密码
+        <a href="/server/home/index/userPassUp">
+            /server/home/index/userPassUp</a>
+    </div>
+    <form method="get" action="/server/home/index/userPassUp">
+        <label class="bixv">登陆用户id(userID):
+            <input name="userID" value="{$Think.session.userID}">
+        </label>
+        <label class="bixv">新密码:
+            <input name="userPass" value="">
+        </label>
+        <label>
+            <button type="submit">修改密码</button>
+        </label>
+    </form>
+</div>
+
+<div class="kuai">
+    <div class="title">修改名字
+        <a href="/server/home/index/userNameUp">
+            /server/home/index/userNameUp</a>
+    </div>
+    <form method="get" action="/server/home/index/userNameUp">
+        <label class="bixv">登陆用户id(userID):
+            <input name="userID" value="{$Think.session.userID}">
+        </label>
+        <label class="bixv">新名字:
+            <input name="userName" value="">
+        </label>
+        <label>
+            <button type="submit">修改名字</button>
+        </label>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">登陆
+    <a href="/server/home/index/sigIn/userMail/liaohui1080@tianliaohui.com/userPass/123456">
+        /server/home/index/sigIn/userMail/liaohui1080@tianliaohui.com/userPass/123456</a>
+    </div>
+    <form method="get" action="/server/home/index/sigIn">
+        <label class="bixv">email:
+            <input name="userMail" value="">
+        </label>
+        <label class="bixv">密码:
+            <input name="userPass" value="">
+        </label>
+        <label>
+            <button type="submit">登陆</button>
+        </label>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">注册
+        <a href="/server/home/index/sigUp/userMail/liaohui1080@tianliaohui.com/userPass/123456">
+            /server/home/index/sigUp/userMail/liaohui1080@tianliaohui.com/userPass/123456</a>
+    </div>
+    <form method="get" action="/server/home/index/sigUp">
+        <label class="bixv">email:
+            <input name="userMail" value="">
+        </label>
+        <label class="bixv">密码:
+            <input name="userPass" value="">
+        </label>
+        <label>
+            <button type="submit">注册</button>
+        </label>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">退出
+        <a href="/server/home/index/sigOut">
+            /server/home/index/sigOut</a>
+    </div>
+    <form method="get" action="/server/home/index/sigOut">
+        <label>
+            <button type="submit">退出</button>
+        </label>
+    </form>
+</div>
+
+
+
+<div class="kuai">
+    <div class="title">获取一封公开信
+        <a href="/server/home/index/openMail/page/0">
+            /server/home/index/openMail/page/0</a>
+    </div>
+    <form method="get" action="/server/home/index/openMail">
+        <label>
+            当前页码(从第0页开始):<input type="text" value="0" name="page">
+        </label>
+        <label>
+            <button type="submit">查看</button>
+        </label>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">增加一封公开信,也就是写一封给所有人的信
+        <a href="/server/home/index/addMailAll">
+            /server/home/index/addMailAll</a>
+    </div>
+    <form method="get" action="/server/home/index/addMailAll">
+        <ul>
+            <li class="bixv">
+                公开信内容:
+            </li>
+            <li class="bixv">
+                <textarea name="mailNeirong"></textarea>
+            </li>
+            <li>
+                <button type="submit">发送</button>
+            </li>
+        </ul>
+
+    </form>
+</div>
+
+
+
+<div class="kuai">
+    <div class="title">获取单个用户的来往信件列表
+        <a href="/server/home/index/userMailList/userListKey/1f0e3dad99908345f7439f8ffabdffc4">
+            /server/home/index/userMailList/mailKey/1f0e3dad99908345f7439f8ffabdffc4</a>
+    </div>
+    <form method="get" action="/server/home/index/userMailList">
+
+        <label>
+            <span class="bixv">用户互相加好友以后得到的key:</span>
+            <input type="text" value="" name="userListKey">
+            <input type="text" value="" name="page">
+
+        </label>
+        <label>
+            <button type="submit">查看</button>
+        </label>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">获取用户的未读邮件
+        <a href="/server/home/index/userMailWeidu/userID/{$Think.session.userID}">
+            /server/home/index/userMailWeidu/userID/{$Think.session.userID}</a>
+    </div>
+    <form method="get" action="/server/home/index/userMailWeidu">
+
+        <label>
+            <span class="bixv">当前登陆用户id(userID):</span>
+            <input type="text" value="{$Think.session.userID}" name="userID">
+
+        </label>
+        <label>
+            <button type="submit">查看</button>
+        </label>
+    </form>
+</div>
+
+<div class="kuai">
+    <div class="title">获取一封私人邮件,并把收信时间更新,只能看自己发送的或者自己接受的 邮件
+        <a href="/server/home/index/getuserMailOne">
+            /server/home/index/getuserMailOne</a>
+    </div>
+    <form method="get" action="/server/home/index/getuserMailOne">
+
+        <label>
+            <span class="bixv">userMailListID表的id(mailID):</span>
+            <input type="text" value="" name="mailID">
+
+        </label>
+        <label>
+            <span class="bixv">当前登陆用户id(userID):</span>
+            <input type="text" value="{$Think.session.userID}" name="userID">
+
+        </label>
+        <label>
+            <button type="submit">查看</button>
+        </label>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">发送一封私人信件
+        <a href="/server/home/index/addMailOne">
+            /server/home/index/addMailOne</a>
+    </div>
+    <form method="get" action="/server/home/index/addMailOne">
+
+        <ul>
+            <li class="bixv">
+               信件内容:
+            </li>
+            <li>
+                <textarea name="mailNeirong"></textarea>
+            </li>
+            <li class="bixv">
+                <input type="text" name="userID" value="{$Think.session.userID}">发信人id(userID):
+            </li>
+            <li class="bixv">
+                <input type="text" name="toUserID">收信人id(toUserID):
+            </li>
+
+            <li class="bixv">
+                <input type="text" name="openMailID">公开信id(openMailID):
+            </li>
+
+            <li>
+                <button type="submit">发送</button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">获取好友列表
+        <a href="/server/home/index/friendList">
+            /server/home/index/friendList</a>
+    </div>
+    <form method="get" action="/server/home/index/friendList">
+
+        <ul>
+
+            <li>
+                <button type="submit">获取</button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">获取ip位置
+        <a href="/server/home/index/getWeizhi">
+            /server/home/index/getWeizhi</a>
+    </div>
+    <form method="get" action="/server/home/index/getWeizhi">
+
+        <ul>
+
+            <li>
+                <button type="submit">获取</button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+<div class="kuai">
+    <div class="title">上传头像
+        <a href="/server/home/index/upUserImg">
+            /server/home/index/upUserImg</a>
+    </div>
+    <form action="/server/home/index/upUserImg" enctype="multipart/form-data" method="post">
+
+        <ul>
+
+            <li>
+                <input type="text" name="name" />
+                <input type="file" name="file" />
+                <input type="submit" value="提交" >
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+</body>
+</html>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
