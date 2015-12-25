@@ -1,6 +1,8 @@
 .DS_Store
-
+*.txt
 /cankao/ 
 /server/Public/userImage/
 /server/oneMail/Runtime/
 /html/Public/
+
+ssserver -c /etc/shadowsocks.json -d start
