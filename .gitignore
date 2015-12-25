@@ -1,7 +1,7 @@
 .DS_Store
 *.txt
 /cankao/ 
-/server/Public/userImage/
+/server/Public/
 /server/oneMail/Runtime/
 /html/Public/
 
