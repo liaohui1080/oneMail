@@ -5,4 +5,3 @@
 /server/oneMail/Runtime/
 /html/Public/
 
-ssserver -c /etc/shadowsocks.json -d start
