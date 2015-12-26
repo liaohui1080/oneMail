@@ -379,4 +379,10 @@ class IndexController extends Controller
         $this->ajaxReturn(["zhuangtai" => 1, "tishi" => "用户资料", "data" => $userData]);
 
     }
+
+
+    //获取用户分组
+    public function getUserGrop(){
+        Quanxian::init(I('toUserID'));
+    }
 }

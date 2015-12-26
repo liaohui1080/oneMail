@@ -242,6 +242,7 @@ class Verif
 
             //获取用户信息,并存储到 cookie
             $userData = Qita::findUser($rs['id']);
+            cookie('userData', json_encode($userData), 3600);
 
             Log::signInOut(1, $rs['id']); //写入登陆日志
             return array('zhuangtai' => true, 'tishi' => '登录成功', 'data' => $userData);
@@ -294,6 +295,7 @@ class Verif
             Log::signInOut(1, $findUserID);
             //获取用户信息
             $userData = Qita::findUser($findUserID);
+            cookie('userData', json_encode($userData), 3600);
             return array('zhuangtai' => true, 'tishi' => '注册完成', 'data' => $userData);
 
         }
@@ -491,6 +493,7 @@ class Qita
         session("userID", null);
 
         cookie("userID", null);
+        cookie("userData", null);
     }
 
 
@@ -876,6 +879,9 @@ class Quanxian
         //获取当前用户能使用的动作
         $userDongzuo = self::getUserGrop();
 
+        //获取用户分组名称
+        $userGropName=$userDongzuo[0];
+
         //检测数组中的key是否有这个操作名, 返回布尔值
         $actionKey = array_key_exists($dongzuo, $userDongzuo[1]);
 
@@ -893,7 +899,7 @@ class Quanxian
         //检测数组中是否有这个操作名
         if (!$actionKey) {
             // 返回JSON数据格式到客户端 包含状态信息
-            exit(json_encode(["quanxian" => 1, "tishi" => "你无权访问"]));
+            exit(json_encode(["quanxian" => 1, "tishi" => "你无权访问" ,'data'=>$userGropName]));
         }else{
 
             //如果间隔时间大于0 ,则说明访问这个操作的时候,需要现在用户的访问时间
