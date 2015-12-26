@@ -773,6 +773,7 @@ class Quanxian
 
         "youke"        => ["游客", [
             "index"    => ["jiangeTime" => 3],
+            "indexOpenMail"=> ["jiangeTime" => 3],
             "sigIn"    => ["jiangeTime" => 0],
             "sigUp"    => ["jiangeTime" => 0],
             "openMail" => ["jiangeTime" => 0],
@@ -780,6 +781,7 @@ class Quanxian
 
         "huiyuan"      => ["会员", [
             "index"=> ["jiangeTime" => 3],
+            "indexOpenMail"=> ["jiangeTime" => 3],
             "userIndex"=> ["jiangeTime" => 0],
             "sigOut"=> ["jiangeTime" => 0],
             "addMailAll"=> ["jiangeTime" =>  60,"tishi"=>'等下一分钟再写公开信把'],
@@ -800,6 +802,7 @@ class Quanxian
         "emailHuiyuan" => ["Email验证会员", [
 
             "index"=> ["jiangeTime" => 3],
+            "indexOpenMail"=> ["jiangeTime" => 3],
             "userIndex"=> ["jiangeTime" => 0],
             "sigOut"=> ["jiangeTime" => 0],
             "addMailAll"=> ["jiangeTime" => 60,"tishi"=>'等下一分钟再写公开信把'],

@@ -154,7 +154,7 @@ class IndexController extends Controller
         $this->ajaxReturn(["zhuangtai" => 1, "tishi" => "修改名字成功"]);
     }
 
-    //修改名字
+    //修改用户照片
     public function upUserImg()
     {
 
@@ -190,6 +190,18 @@ class IndexController extends Controller
         //dump($page);
     }
 
+
+
+    //获取首页面显示的公开信
+    public function indexOpenMail(){
+        $id= Verif::canshu(I('indexID'), "id", true, 'int');//验证
+
+        $data=Db::dbfindOne("OpenMail",['id'=>$id]);
+        $data['user']=Qita::findUser($data['user_id']);
+//        cookie("indexID",$data['id']);
+        //Dump($data);
+        $this->ajaxReturn(["zhuangtai" => 1, "tishi" => "首页公开信获取成功", "data" => $data]);
+    }
 
 
     //增加一封公开信,也就是写一封给所有人的信
