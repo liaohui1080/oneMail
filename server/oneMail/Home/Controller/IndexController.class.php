@@ -31,7 +31,7 @@ class IndexController extends Controller
     public function index()
     {
         //echo "index页面";
-
+       // dump(php_uname('s'));
         //Verif::signUp("liaohui1080@tianliaohui.com","123456");
 
         //$dd=Verif::signIn("liaohui1080@tianliaohui.com","123456");
@@ -120,11 +120,29 @@ class IndexController extends Controller
     //修改密码
     public function userPassUp()
     {
-        $userID = Verif::canshu(I('userID'), '$userID', true, 'int');
+//      $userID = Verif::canshu(I('userID'), '$userID', true, 'int');
+        $userID = Verif::canshu(session('userID'), '$userID', true, 'int');
+        $userPassOld = Verif::canshu(I('userPassOld'), 'userPass', true, 'pass2');
         $userPass = Verif::canshu(I('userPass'), 'userPass', true, 'pass2');
 
-        Db::dbUp("User", ['id' => $userID, 'pass' => md5($userPass)]);
-        $this->ajaxReturn(["zhuangtai" => 1, "tishi" => "修改成功"]);
+        //判断老密码是否正确
+        $userPassYanzheng = Db::dbfindOne("User",['id'=>$userID, 'pass'=>md5($userPassOld)]);
+        if($userPassYanzheng){
+
+            //判断新密码是否和老密码相同
+            if($userPassYanzheng['pass']==md5($userPass)){
+                $this->ajaxReturn(["zhuangtai" => 0, "tishi" => "新密码不能和老密码相同"]);
+            }else{
+                Db::dbUp("User", ['id' => $userID, 'pass' => md5($userPass)]);
+                $this->ajaxReturn(["zhuangtai" => 1, "tishi" => "修改成功"]);
+            }
+
+        }else{
+            $this->ajaxReturn(["zhuangtai" => 0, "tishi" => "老密码不正确"]);
+        }
+
+
+
     }
 
     //修改名字

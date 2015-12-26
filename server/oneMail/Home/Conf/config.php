@@ -1,8 +1,16 @@
 <?php
+$serverType=php_uname('s'); //获取服务器类型
+if($serverType=='Darwin'){
+    $hosts='127.0.0.1';
+}else{
+    $hosts='localhost';
+}
+
 return array(
     /* 数据库设置 */
     'DB_TYPE'                => 'mysql', // 数据库类型
-    'DB_HOST'                => 'localhost', // 服务器地址
+    'DB_HOST'                => $hosts, // 服务器地址
+//    'DB_HOST'                => '127.0.0.1', // 服务器地址
     'DB_NAME'                => 'one_mail', // 数据库名
     'DB_USER'                => 'root', // 用户名
     'DB_PWD'                 => '13525232487', // 密码
