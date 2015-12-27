@@ -4,4 +4,6 @@
 /server/Public/
 /server/oneMail/Runtime/
 /html/Public/
+/node_modules/
+/bower_components/
 
