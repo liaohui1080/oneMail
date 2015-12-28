@@ -75,7 +75,7 @@ class IndexController extends Controller
 
 
 
-    //ip地址定位城市
+    //ip地址定位城市,并存入数据库
     public function  setWeizhi(){
         $weizhi= Ip::getWeizhi();
 

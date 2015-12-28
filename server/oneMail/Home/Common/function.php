@@ -1050,7 +1050,7 @@ class Ip
 {
 
     /*
-     * 从淘宝ip库获得ip的位置信息
+     * 从淘宝ip库获得ip的位置信息 .从国外无法访问
      * @public $clientIP
      * */
     private static function taobaoIP($ip)
@@ -1071,35 +1071,12 @@ class Ip
 
     }
 
-    //获得本地真实IP,通过http://www.ip138.com/ip2city.asp返回的ip来确定
+    //获得本地真实IP,通过http://188.166.241.202:8080/server/home/index/getIP返回的ip来确定
     private function get_onlineip()
     {
-//        $mip = file_get_contents("http://www.ip138.com/ip2city.asp");
-        $mip = file_get_contents("http://188.166.241.202:8080/server/home/index/getIP");
 
-        //如果存在返回值则说明获取成功
-        if ($mip) {
-            preg_match("/\[.*\]/", $mip, $sip);
-            $p = array("/\[/", "/\]/");
+        return file_get_contents("http://188.166.241.202:8080/server/home/index/getIP");
 
-            return preg_replace($p, "", $sip[0]);
-        } else {
-            return false;
-        }
-    }
-
-    public  static  function get_onlineip2() {
-        $onlineip = '';
-        if(getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
-            $onlineip = getenv('HTTP_CLIENT_IP');
-        } elseif(getenv('HTTP_X_FORWARDED_FOR') && strcasecmp(getenv('HTTP_X_FORWARDED_FOR'), 'unknown')) {
-            $onlineip = getenv('HTTP_X_FORWARDED_FOR');
-        } elseif(getenv('REMOTE_ADDR') && strcasecmp(getenv('REMOTE_ADDR'), 'unknown')) {
-            $onlineip = getenv('REMOTE_ADDR');
-        } elseif(isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], 'unknown')) {
-            $onlineip = $_SERVER['REMOTE_ADDR'];
-        }
-        return $onlineip;
     }
 
 
@@ -1143,7 +1120,7 @@ class Ip
 
     }
 
-    //获取ip的真实地址,并写入数据库
+    //获取ip的真实地址,并写入数据库 ..这是从淘宝获取位置的
     public static function getWeizhi备用()
     {
 
