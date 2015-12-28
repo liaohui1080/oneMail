@@ -74,17 +74,18 @@ class IndexController extends Controller
 
 
 
-    //ip地址定位城市
-    public function  getWeizhi(){
-       $weizhi= Ip::getWeizhi();
-        $this->ajaxReturn($weizhi);
-    }
 
     //ip地址定位城市
     public function  setWeizhi(){
         $weizhi= Ip::getWeizhi();
 
         $this->ajaxReturn($weizhi);
+    }
+
+    //获取ip
+    public function getIP(){
+        $ip=get_client_ip();
+        echo $ip;
     }
 
 

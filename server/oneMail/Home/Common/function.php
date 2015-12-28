@@ -778,6 +778,7 @@ class Quanxian
             "sigIn"    => ["jiangeTime" => 0],
             "sigUp"    => ["jiangeTime" => 0],
             "openMail" => ["jiangeTime" => 0],
+            "getIP" => ["jiangeTime" => 0],
         ]],
 
         "huiyuan"      => ["会员", [
@@ -795,9 +796,8 @@ class Quanxian
             'userPassUp'=> ["jiangeTime" => 0],
             'userNameUp'=> ["jiangeTime" => 0],
             "userAll"=> ["jiangeTime" => 0],
-            "getWeizhi"=> ["jiangeTime" => 0],
             "setWeizhi"=> ["jiangeTime" => 0],
-            "getUserData"=> ["jiangeTime" => 0],
+            "getIP" => ["jiangeTime" => 0],
             "upUserImg"=> ["jiangeTime" => 0]
         ]],
         "emailHuiyuan" => ["Email验证会员", [
@@ -816,9 +816,9 @@ class Quanxian
             'userPassUp'=> ["jiangeTime" => 0],
             'userNameUp'=> ["jiangeTime" => 3],
             "userAll"=> ["jiangeTime" => 0],
-            "getWeizhi"=> ["jiangeTime" => 0],
             "setWeizhi"=> ["jiangeTime" => 0],
             "getUserData"=> ["jiangeTime" => 0],
+            "getIP" => ["jiangeTime" => 0],
             "upUserImg"=> ["jiangeTime" => 0]
 
         ]],
@@ -1074,7 +1074,8 @@ class Ip
     //获得本地真实IP,通过http://www.ip138.com/ip2city.asp返回的ip来确定
     private function get_onlineip()
     {
-        $mip = file_get_contents("http://www.ip138.com/ip2city.asp");
+//        $mip = file_get_contents("http://www.ip138.com/ip2city.asp");
+        $mip = file_get_contents("http://http://188.166.241.202/server/home/index/getIP");
 
         //如果存在返回值则说明获取成功
         if ($mip) {
@@ -1108,8 +1109,8 @@ class Ip
     public static function getWeizhi()
     {
 
-        $ip = get_client_ip();//获取ip
-//        $ip = self::get_onlineip();//获取ip
+//        $ip = get_client_ip();//获取ip
+        $ip = self::get_onlineip();//获取ip
 
         if ($ip) {
 
