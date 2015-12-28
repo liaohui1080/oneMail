@@ -7604,7 +7604,7 @@ body {
 page 开头的都是 页面整体css
 */
 .page-index {
-  background-image: url(../image/1.png);
+  background-image: url(../image/1.jpg);
   background-repeat: no-repeat;
   background-position: top center ;
   min-width: 1300px;

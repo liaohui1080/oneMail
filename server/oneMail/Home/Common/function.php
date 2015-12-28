@@ -1100,7 +1100,7 @@ class Ip
 
             $data = self::chunzhenIP($ip); //获取位置数据
             $dataIP = $data['ip']; //获取ip地址
-            $dataFrom = $data['country'] . $data['area']; //获取城市
+            $dataFrom = $data['country']; //获取城市
             //Dump($data);
             //写入数据库
             self::setWeizhi($dataIP, $dataFrom);
