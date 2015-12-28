@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+    //获取本地IP
+    function GetLocalIPAddress()
+    {
+        var obj = null;
+        var rslt = "";
+        try
+        {
+            obj = new ActiveXObject("rcbdyctl.Setting");
+            rslt = obj.GetIPAddress;
+            obj = null;
+        }
+        catch(e)
+        {
+            console.log("ErrInfoIS:"+e)
+        }
+        return rslt;
+    }
+    document.write("你的IP是：" + GetLocalIPAddress());
+</script>
