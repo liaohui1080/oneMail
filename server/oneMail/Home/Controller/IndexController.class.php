@@ -85,7 +85,8 @@ class IndexController extends Controller
     //获取ip
     public function getIP(){
         $ip=get_client_ip();
-        echo $ip;
+        //echo $ip;
+        $this->ajaxReturn(['zhuangtai'=>1,'tishi'=>'获取ip成功','data'=>$ip]);
     }
 
 

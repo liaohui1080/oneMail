@@ -1075,8 +1075,18 @@ class Ip
     private function get_onlineip()
     {
 
-        return file_get_contents("http://188.166.241.202:8080/server/home/index/getIP");
+//        return file_get_contents("http://188.166.241.202:8080/server/home/index/getIP");
+        $mip = file_get_contents("http://www.ip138.com/ip2city.asp");
 
+        //如果存在返回值则说明获取成功
+        if ($mip) {
+            preg_match("/\[.*\]/", $mip, $sip);
+            $p = array("/\[/", "/\]/");
+
+            return preg_replace($p, "", $sip[0]);
+        } else {
+            return false;
+        }
     }
 
 
