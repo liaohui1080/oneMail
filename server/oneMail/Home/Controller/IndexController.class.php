@@ -84,7 +84,7 @@ class IndexController extends Controller
 
     //获取ip
     public function getIP(){
-        $ip=get_client_ip();
+        $ip=Ip::get_onlineip2();
         echo $ip;
     }
 
