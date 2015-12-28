@@ -4,6 +4,7 @@ namespace LH;
 
 use Think\Controller;
 use Think\Model;//在这里加一个这就可以了(我是菜鸟)
+use Org\Net\IpLocation;
 
 //验证库
 class Verif
@@ -1061,6 +1062,15 @@ class Ip
     }
 
 
+    //从纯真ip数据库获取ip位置
+    private static function chunzhenIP($ip){
+        $ip = Verif::canshu($ip, 'chunzhenIP$ip', true);
+        $Ips = new IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
+        $IPinfo = $Ips->getlocation($ip); // 获取某个IP地址所在
+        return $IPinfo;
+
+    }
+
     //获得本地真实IP,通过http://www.ip138.com/ip2city.asp返回的ip来确定
     private function get_onlineip()
     {
@@ -1081,7 +1091,7 @@ class Ip
     //将位置写入数据库
     public static function  setWeizhi($ip, $weizhi)
     {
-        $ip = Verif::canshu($ip, '$ip', true);
+        $ip = Verif::canshu($ip, 'setWeizhi$ip', true);
         $weizhi = Verif::canshu($weizhi, '$weizhi', true);
 
         $data = Db::dbSave("UserWeizhi", ['user_id' => session("userID"), 'ip' => $ip, 'weizhi' => $weizhi, 'time_int' => time()]);
@@ -1098,7 +1108,32 @@ class Ip
     public static function getWeizhi()
     {
 
-        $ip = self::get_onlineip();//获取ip
+        $ip = get_client_ip();//获取ip
+//        $ip = self::get_onlineip();//获取ip
+
+        if ($ip) {
+
+            $data = self::chunzhenIP($ip); //获取位置数据
+            $dataIP = $data['ip']; //获取ip地址
+            $dataFrom = $data['country'] . $data['area']; //获取城市
+            //Dump($data);
+            //写入数据库
+            self::setWeizhi($dataIP, $dataFrom);
+
+
+            return ["zhuangtai" => 1, 'tishi' => '定位成功', 'data' => ['ip' => $ip, 'weizhi' => $dataFrom]];
+        } else {
+            return false;
+        }
+
+    }
+
+    //获取ip的真实地址,并写入数据库
+    public static function getWeizhi备用()
+    {
+
+        $ip = get_client_ip();//获取ip
+//        $ip = self::get_onlineip();//获取ip
 
         if ($ip) {
 
