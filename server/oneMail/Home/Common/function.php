@@ -1075,7 +1075,7 @@ class Ip
     private function get_onlineip()
     {
 //        $mip = file_get_contents("http://www.ip138.com/ip2city.asp");
-        $mip = file_get_contents("http://http://188.166.241.202/server/home/index/getIP");
+        $mip = file_get_contents("http://188.166.241.202:8080/server/home/index/getIP");
 
         //如果存在返回值则说明获取成功
         if ($mip) {
