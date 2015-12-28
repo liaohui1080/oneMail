@@ -77,16 +77,21 @@ class IndexController extends Controller
 
     //ip地址定位城市,并存入数据库
     public function  setWeizhi(){
-        $weizhi= Ip::getWeizhi();
+
+        $ip = Verif::canshu(I('ip'), 'ip', true);
+        $weizhi= Ip::getWeizhi($ip);
 
         $this->ajaxReturn($weizhi);
     }
 
     //获取ip
     public function getIP(){
+        $callback = $_GET[callback ];
         $ip=get_client_ip();
         //echo $ip;
-        $this->ajaxReturn(['zhuangtai'=>1,'tishi'=>'获取ip成功','data'=>$ip]);
+        echo $callback.'('.json_encode(['zhuangtai'=>1,'tishi'=>'获取ip成功','data'=>$ip]).')';
+
+        //$this->ajaxReturn($dd);
     }
 
 

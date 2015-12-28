@@ -1071,23 +1071,6 @@ class Ip
 
     }
 
-    //获得本地真实IP,通过http://188.166.241.202:8080/server/home/index/getIP返回的ip来确定
-    private function get_onlineip()
-    {
-
-//        return file_get_contents("http://188.166.241.202:8080/server/home/index/getIP");
-        $mip = file_get_contents("http://www.ip138.com/ip2city.asp");
-
-        //如果存在返回值则说明获取成功
-        if ($mip) {
-            preg_match("/\[.*\]/", $mip, $sip);
-            $p = array("/\[/", "/\]/");
-
-            return preg_replace($p, "", $sip[0]);
-        } else {
-            return false;
-        }
-    }
 
 
     //将位置写入数据库
@@ -1107,11 +1090,11 @@ class Ip
     }
 
     //获取ip的真实地址,并写入数据库
-    public static function getWeizhi()
+    public static function getWeizhi($ip)
     {
 
 //        $ip = get_client_ip();//获取ip
-        $ip = self::get_onlineip();//获取ip
+        //$ip = self::get_onlineip();//获取ip
 
         if ($ip) {
 
@@ -1130,29 +1113,7 @@ class Ip
 
     }
 
-    //获取ip的真实地址,并写入数据库 ..这是从淘宝获取位置的
-    public static function getWeizhi备用()
-    {
 
-        $ip = get_client_ip();//获取ip
-//        $ip = self::get_onlineip();//获取ip
-
-        if ($ip) {
-
-            $data = self::taobaoIP($ip); //获取位置数据
-            $dataIP = $data->ip; //获取ip地址
-            $dataFrom = $data->country . $data->area . $data->region . $data->city; //获取城市
-
-            //写入数据库
-            self::setWeizhi($dataIP, $dataFrom);
-
-
-            return ["zhuangtai" => 1, 'tishi' => '定位成功', 'data' => ['ip' => $dataIP, 'weizhi' => $dataFrom]];
-        } else {
-            return false;
-        }
-
-    }
 
     //从数据库里获取用户的位置
     public static function getDbWeizhi($userID)
