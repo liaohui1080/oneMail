@@ -17,6 +17,7 @@ var htmlmin = require('gulp-htmlmin'), //html压缩
 
 var cssArr = [
     'src/css/chushihua.css',
+    'node_modules/angular-loading-bar/build/loading-bar.css',
     'bower_components/bootstrap/dist/css/bootstrap.css',
     'bower_components/bootstrap/dist/css/bootstrap-theme.css',
     'siren/dropify/dist/css/dropify.min.css',
@@ -24,17 +25,18 @@ var cssArr = [
 ];
 
 var jsArr=[
+
     'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/angular/angular.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
     'bower_components/store/dist/store2.min.js',
-    'bower_components/angular/angular.js',
     'siren/dropify/dist/js/dropify.min.js',
     'bower_components/angular-cookies/angular-cookies.min.js',
     'bower_components/ng-file-upload/ng-file-upload.min.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/textAngular/dist/textAngular-sanitize.min.js',
     'siren/wangEditor/dist/js/wangEditor-1.3.12.min.js',
-    'src/js/main.js'
+    'node_modules/angular-loading-bar/build/loading-bar.min.js'
 ];
 
 
@@ -72,6 +74,14 @@ gulp.task('js', function() {
         .pipe(notify({ message: 'js 压缩成功' }));
 });
 
+// 把index.js复制到 bulid 文件夹
+gulp.task('indexjs', function() {
+    return gulp.src('src/js/index.js')
+
+        .pipe(gulp.dest('build/js'))
+        .pipe(notify({ message: 'index.js复制成功' }));
+});
+
 
 // 压缩图片
 gulp.task('img', function() {
@@ -98,7 +108,7 @@ gulp.task('html', function() {
 
 // 默认任务
 gulp.task('default', function(){
-    gulp.run('css','lint','js','img','html');
+    gulp.run('css','lint','js','indexjs','img','html');
 
     // 监听html文件变化
     gulp.watch('src/**/*.html', ['html']);
@@ -107,7 +117,7 @@ gulp.task('default', function(){
     gulp.watch('src/css/*.css', ['css']);
 
     // Watch .js files
-    gulp.watch('src/js/*.js', ['lint', 'js']);
+    gulp.watch('src/js/*.js', ['lint', 'js','indexjs']);
 
     // Watch image files
     gulp.watch('src/image/*', ['img']);

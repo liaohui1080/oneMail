@@ -9,9 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "gulp": "^3.9.0",
-    "gulp-minify-css": "^1.2.2",
-    "gulp-notify": "^2.2.0"
+    "angular-loading-bar": "^0.8.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
