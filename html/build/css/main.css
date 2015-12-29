@@ -7535,6 +7535,7 @@ fieldset[disabled] .btn-danger.active {
   height: 250px;
 }
 body {
+  font-family: "Lucida Grande", Lucida Sans Unicode, Hiragino Sans GB, WenQuanYi Micro Hei, Verdana, Aril, "微软雅黑", "microsoft yahei", msyh, yahei, "simsun", sans-serif;
   background: #f3f3f3;
 }
 .add-mail-btn-lg {
@@ -7576,7 +7577,7 @@ body {
 }
 .panel-mail-baody .mail-head {
   padding-top: 20px;
-  font-size: 30px;
+  font-size: 25px;
 }
 .panel-mail-baody .mail-footer {
   padding: 20px 0;
@@ -7585,7 +7586,18 @@ body {
   font-size: 22px;
 }
 .panel-mail-baody .mail-body {
+  word-wrap: break-word;
+  word-break: break-all;
   font-size: 16px;
+}
+.panel-mail-baody .mail-body p {
+  padding-bottom: 10px;
+  line-height: 1.8;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.panel-mail-baody .mail-body img {
+  max-width: 600px;
 }
 .panel-add-mail .user-image {
   width: 65px;
