@@ -34,7 +34,7 @@ var jsArr=[
     'bower_components/angular-cookies/angular-cookies.min.js',
     'bower_components/ng-file-upload/ng-file-upload.min.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
-    'bower_components/textAngular/dist/textAngular-sanitize.min.js',
+    //'bower_components/textAngular/dist/textAngular-sanitize.min.js',
     'siren/wangEditor/dist/js/wangEditor-1.3.12.min.js',
     'node_modules/angular-loading-bar/build/loading-bar.min.js'
 ];
