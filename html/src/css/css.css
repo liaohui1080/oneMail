@@ -63,6 +63,18 @@ body {
 }
 .panel-shezhi .panel-body {
   padding: 10px 30px;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 16px;
+}
+.panel-shezhi .panel-body p {
+  padding-bottom: 10px;
+  line-height: 1.8;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.panel-shezhi .panel-body img {
+  max-width: 600px;
 }
 .panel-shezhi .panel-heading {
   padding-bottom: 0;

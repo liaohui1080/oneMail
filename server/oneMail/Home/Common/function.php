@@ -243,7 +243,7 @@ class Verif
 
             //获取用户信息,并存储到 cookie
             $userData = Qita::findUser($rs['id']);
-            cookie('userData', json_encode($userData), 3600);
+            cookie('userData', json_encode($userData), 604800);
 
             Log::signInOut(1, $rs['id']); //写入登陆日志
             return array('zhuangtai' => true, 'tishi' => '登录成功', 'data' => $userData);
@@ -296,7 +296,7 @@ class Verif
             Log::signInOut(1, $findUserID);
             //获取用户信息
             $userData = Qita::findUser($findUserID);
-            cookie('userData', json_encode($userData), 3600);
+            cookie('userData', json_encode($userData), 604800);
             return array('zhuangtai' => true, 'tishi' => '注册完成', 'data' => $userData);
 
         }
@@ -465,7 +465,7 @@ class Qita
 
         session('userID', $userID);
 
-        cookie('userID', $userID, 3600);
+        cookie('userID', $userID, 604800);
 
         return true;
 
